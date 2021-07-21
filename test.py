@@ -17,7 +17,7 @@ app.config['JSON_AS_ASCII'] = False
 
 @app.route('/')
 def upload_file():
-   return render_template('index.html',host = request.remote_addr)
+   return render_template('index.html', host =  request.headers.get('Host'))
 	
 @app.route('/upload', methods = ['GET', 'POST'])
 def upload_file2():
