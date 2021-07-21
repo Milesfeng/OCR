@@ -29,12 +29,12 @@ def upload_file2():
             return jsonify({"error": 1001, "msg": "上傳圖片格式限定為 : png、PNG、jpg、JPG、bmp"})
 
         #   存圖
-        f.save('static/upload_img/' + f.filename)
-        img = cv2.imread('static/upload_img/' + f.filename)
+        #f.save('static/upload_img/' + f.filename)
+        #img = cv2.imread('static/upload_img/' + f.filename)
 
         #   不存圖
-        # npimg = numpy.fromstring(f.read(), numpy.uint8)
-        # img = cv2.imdecode(npimg, cv2.IMREAD_COLOR)
+        npimg = numpy.fromstring(f.read(), numpy.uint8)
+        img = cv2.imdecode(npimg, cv2.IMREAD_COLOR)
 
         #   辨識
         res = recognize(img)
