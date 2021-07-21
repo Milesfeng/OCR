@@ -11,7 +11,7 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'JPG', 'PNG', 'bmp'])
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
-from flask import Flask, render_template, request, jsonify, flash
+from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
 
